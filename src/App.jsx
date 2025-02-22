@@ -52,9 +52,6 @@ function App() {
     setTodos(newTodos);
     saveToLS(newTodos);
   }
-  const handleSpeak = (e, id) => {
-    
-  }
 
   const handleCheckbox = (e, id) => {
     let index = todos.findIndex((item)=>{
@@ -65,15 +62,31 @@ function App() {
     setTodos(newTodos)
     saveToLS(newTodos);
   }
+
+  const handleSpeak = (e, id)=>{
+    let t = todos.filter((i)=>{
+      return i.id === id
+    })
+    // console.log(t[0].todo)
+    const text = t[0].todo;
+    const value = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(value);
+  }
+
+  const handleKeyDown = (e)=>{
+    if(e.key === "Enter"){
+      handleAdd();
+    }
+  }
   
   return (
     <>
       <Navbar />
-      <div className="container mx-auto w-3/4 bg-violet-200 rounded-md p-5 my-5 min-h-[80vh]">
+      <div className="container mx-auto w-3/4 bg-violet-200 rounded-md p-5 my-5 min-h-[80vh] max-sm:w-[95%] max-sm:mx-auto">
         <h1 className='text-center font-bold text-xl'>iTodo - Manage Your Todos</h1>
         <h2 className='p-3 font-bold text-lg'>Add a todo</h2>
         <div className="input px-1 flex gap-3 w-full justify-around">
-          <input onChange={handleChange} value={todo} type="text" className='rounded-md bg-white px-4 outline-none w-full ' placeholder='Add Your todo here...' />
+          <input onKeyDown={handleKeyDown} onChange={handleChange} value={todo} type="text" className='rounded-md bg-white px-4 outline-none w-full ' placeholder='Add Your todo here...' />
           <button onClick={handleAdd} className='p-3 py-1 cursor-pointer bg-violet-800 hover:bg-violet-950 rounded-md text-white font-bold text-sm disabled:bg-violet-300' disabled={todo.length<2}>Save</button>
         </div>
         <h2 className='m-2 my-4 font-bold text-lg'>Your Todos</h2>
@@ -88,7 +101,7 @@ function App() {
               <input onChange={(e)=>{handleCheckbox(e, item.id)}} className='accent-violet-600' type="checkbox" checked={item.isCompleted} id="" />
               <div className={`font-medium ${item.isCompleted?'line-through':''}`} >{item.todo}</div>
               </div>
-              <div className="buttons flex">
+              <div className="buttons flex max-sm:flex-col max-sm:gap-1.5">
                 <button onClick={(e)=>{handleSpeak(e, item.id)}} className='p-4 py-2 mx-1 cursor-pointer bg-emerald-500 hover:bg-emerald-900 rounded-md text-white font-bold text-sm'><RxSpeakerLoud /></button>
                 <button onClick={(e)=>{handleEdit(e, item.id)}} className='p-4 py-2 mx-1 cursor-pointer bg-violet-800 hover:bg-violet-950 rounded-md text-white font-bold text-sm'><FaEdit /></button>
                 <button onClick={(e)=>{handleDelete(e, item.id)}} className='p-4 py-2 mx-1 cursor-pointer bg-red-700 hover:bg-red-800 rounded-md text-white font-bold text-sm'><MdDeleteOutline /></button>
