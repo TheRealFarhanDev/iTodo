@@ -14,7 +14,7 @@ iTodo is a sleek and efficient todo application built with React, Vite, and Tail
 
 ## Live Preview
 
-[**Click here to view the live demo**](REPLACE_WITH_LIVE_DEPLOYMENT_LINK)
+[**Click here to view the live demo**](https://itodo-drab.vercel.app/)
 
 ## Technologies Used
 
