@@ -1,4 +1,4 @@
-# iTodo - Modern Todo Application
+# iTodo - Modern Todo Application - [**Live demo**](https://itodo-drab.vercel.app/)
 
 iTodo is a sleek and efficient todo application built with **React**, **Vite**, and **Tailwind CSS**. It empowers you to effortlessly manage your daily tasks with a clean and intuitive interface.
 
