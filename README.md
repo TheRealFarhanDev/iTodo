@@ -18,7 +18,7 @@ iTodo is a sleek and efficient todo application built with **React**, **Vite**, 
 
 ## Technologies Used
 
-* **React** ![React Icon](https://img.icons8.com/ios-filled/50/000000/react.png): A JavaScript library for building user interfaces.
+* **React** ![React Icon](https://img.icons8.com/?size=100&id=122637&format=png&color=000000): A JavaScript library for building user interfaces.
 * **Vite** ![Vite Icon](https://img.icons8.com/ios-filled/50/000000/vite.png): A fast build tool and development server for modern web projects.
 * **Tailwind CSS** ![Tailwind CSS Icon](https://img.icons8.com/ios-filled/50/000000/tailwindcss.png): A utility-first CSS framework for rapid UI development.
 * **Local Storage** ![Local Storage Icon](https://img.icons8.com/ios-filled/50/000000/cloud-storage.png): For persistent data storage.
